@@ -20,8 +20,10 @@ public class UserDao {
         String hsql="from USER";
         Session session = getSessionFactory().getCurrentSession();
         Query query = session.createQuery(hsql);
-        
-        return query.list();
+        List<User> list = query.list();
+        list.get(0).setAge(99);
+        session.update(list.get(0));
+        return list;
     }
 
     public SessionFactory getSessionFactory() {
