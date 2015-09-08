@@ -18,9 +18,12 @@ public class FirstController {
     @RequestMapping("/hello.do")
     public String sayHello(String username) {
         List<User> list = service.getUsers();
+        /*
         System.out.println("username is: " + username);
         System.out.println(list.size());
         System.out.println(list.get(0).getName());
+        */
+        service.getUserById(2);
         return "success";
     }
 }

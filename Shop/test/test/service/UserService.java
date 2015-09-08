@@ -17,4 +17,9 @@ public class UserService {
     public List<User> getUsers() {
         return dao.getAllUser();
     }
+    
+    public void getUserById(int id) {
+        String sql = "select * from USER where id = " + id;
+        dao.getUserBySQL(sql);
+    }
 }
